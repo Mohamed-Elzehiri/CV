@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        .container {
+            background: linear-gradient(to bottom, #66d1bd, #ffffff);
+            height: 100vh;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        .linkText {
+            position: relative;
+            color: green;
+            text-decoration: underline;
+            font-size: 1.25rem;
+            font-weight: bold;
+
+        }
+
+        .linkText:hover {
+
+            text-decoration: none;
+            color: red;
+
+        }
+
+        .linkText::after {
+            content: '\27A4';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .linkText:hover::after {
+            opacity: 1;
+        }
+
+        .screen2 {
+            display: none;
+        }
+
+
+        .store-info {
+            border-top: 3px solid #000;
+        }
+
+        #imageSection4 {
+            margin: 5% 0;
+        }
+
+        .Section6 {
+            background-color: #000;
+            color: white;
+        }
+
+        .Section7 {
+            background-image: url('img/photo8.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 10% 5%;
+            padding: 10%;
+            color: white;
+            border-radius: 20px;
+        }
+
+
+        #linkSection8 {
+            text-decoration: underline;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .Section9 {
+            background: linear-gradient(to right, #19bd63, #5fd5b55b);
+
+        }
+
+        .linkBtn,
+        #btnSection9 {
+            border-radius: 20px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .linkBtn:hover {
+            background-color: #19bd63;
+            color: white;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .footer-section {
+            margin: 0 20px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+
+        .aLink {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+
+        }
+
+        .aLink:hover {
+            text-decoration: none;
+            color: #19bd63;
+        }
+
+        .img-fluid {
+            max-height: 50%;
+        }
+
+
+        /*---------- 4K -----------*/
+
+        @media only screen and (max-width: 2560px) {
+
+            .container {
+                max-width: 2560px;
+
+            }
+        }
+
+        /*---------- Laptop L -----------*/
+
+        @media only screen and (max-width: 1440px) {
+
+            lml .container {
+                max-width: 1440px;
+
+            }
+        }
+
+        /*---------- Laptop -----------*/
+
+        @media only screen and (max-width: 1024px) {
+
+            .container {
+                max-width: 1024px;
+
+            }
+        }
+
+        /*---------- Tablet -----------*/
+
+        @media only screen and (max-width: 768px) {
+
+            .container {
+                max-width: 768px;
+
+            }
+        }
+
+        /*---------- mobile L -----------*/
+
+        @media only screen and (max-width: 425px) {
+
+            .container {
+                max-width: 425px;
+
+            }
+        }
+
+        /*---------- mobile M -----------*/
+
+        @media only screen and (max-width: 375px) {
+
+            .container {
+                max-width: 375px;
+
+            }
+        }
+
+        /*---------- mobile S -----------*/
+
+
+        @media only screen and (max-width: 320px) {
+
+            .container {
+                max-width: 320px;
+
+            }
+
+            .h2Section7 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/Shopify-Logo.png" alt="Shopify Logo" class="logo1"
+                            style="max-width: 200px; max-height: 50px;">
+                        <span class="ms-2" id="logoText">Shopify</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    Solutions
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                                    <li><span class="dropdown-header">Start</span></li>
+                                    <li><a class="dropdown-item" href="#">Start your business</a></li>
+                                    <li><a class="dropdown-item" href="#">Create your website</a></li>
+                                    <li><a class="dropdown-item" href="#">Customize your store</a></li>
+                                    <li><a class="dropdown-item" href="#">Find business apps</a></li>
+                                    <li><a class="dropdown-item" href="#">Own your site domain</a></li>
+                                    <li><a class="dropdown-item" href="#">Explore free business tools</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Sell</span></li>
+                                    <li><a class="dropdown-item" href="#">Sell your products</a></li>
+                                    <li><a class="dropdown-item" href="#">Check out customers</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell online</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell across channels</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell in person</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell globally</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell wholesale</a></li>
+                                    <li><a class="dropdown-item" href="#">Accept online payments</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Market</span></li>
+                                    <li><a class="dropdown-item" href="#">Market your business</a></li>
+                                    <li><a class="dropdown-item" href="#">Market across social</a></li>
+                                    <li><a class="dropdown-item" href="#">Chat with customers</a></li>
+                                    <li><a class="dropdown-item" href="#">Nurture customers</a></li>
+                                    <li><a class="dropdown-item" href="#">Know your audience</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="ResourcesDropdown" role="button"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="ResourcesDropdown">
+                                    <li><span class="dropdown-header">Help and support</span></li>
+                                    <li><a class="dropdown-item" href="#">Help and support</a></li>
+                                    <li><a class="dropdown-item" href="#">How-to guides</a></li>
+                                    <li><a class="dropdown-item" href="#">Business courses</a></li>
+                                    <li><a class="dropdown-item" href="#">Shopify blog</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Popular</span></li>
+                                    <li><a class="dropdown-item" href="#">What is Shopify?</a></li>
+                                    <li><a class="dropdown-item" href="#">Shopify Editions</a></li>
+                                    <li><a class="dropdown-item" href="#">Founder stories</a></li>
+                                    <li><a class="dropdown-item" href="#">Branding</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Marketing</span></li>
+                                    <li><a class="dropdown-item" href="#">Build a marketing plan</a></li>
+                                    <li><a class="dropdown-item" href="#">commerce SEO</a></li>
+                                    <li><a class="dropdown-item" href="#">Social media strategy</a></li>
+                                    <li><a class="dropdown-item" href="#">Business growth</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="whatsNewDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    What's new
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="whatsNewDropdown">
+                                    <li><a class="dropdown-item" href="#">Changelog</a></li>
+                                    <li><a class="dropdown-item" href="#">Winter '24 Edition</a></li>
+                                    <li><a class="dropdown-item" href="#">All Editions</a></li>
+                                    <li><a class="dropdown-item" href="#">Newsroom</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-login bg-info m-2">Log in</button>
+                            <button class="btn btn-trial bg-success m-2">Start free trial</button>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <main>
+            <!-- Section 1 -->
+            <section class="Section1 p-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="textSection1 text-center">
+                            <h2 class="titleSection">Ready to start selling?</h2>
+                            <p class="descriptionSection">Get up and running fast with easy-to-use tools to build your
+                                brand.</p>
+                            <button id="btnSection1" class="btn mb-3 bg-success">Start free trial</button>
+                            <p class="description2Section1">Get 3 days free then 1 month for $1.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <img src="img/photo2.png" alt="Hero Image" class="img-fluid  ">
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Section 2 -->
+            <section class="Section2 p-5">
+                <div class="colum align-items-center">
+                    <div class="align-items-center ">
+                        <div class="textSection2 text-center">
+                            <p class="descriptionSection2">ONLINE STORE BUILDER</p>
+                            <h2 class="titleSection">Build your store</h2>
+                            <p class="descriptionSection">Bring your idea to life with the tools you need to start
+                                selling.</p>
+                        </div>
+                    </div>
+                    <div class="align-items-center ">
+                        <img src="img/photo3.png" alt="Hero Image" class="img-fluid w-100 ">
+                    </div>
+
+
+                    <div class="row align-items-center  pt-5 ">
+                        <div class="col-md-4 mb-4 ">
+                            <div class="store-info ">
+                                <h2 class="title2Section">Build an online storefront</h2>
+                                <p>Personalize your design with drag-and-drop tools that make your online store shine.
+                                </p>
+                                <a href="#" class="linkText">Online Store Builder</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="store-info ">
+                                <h2 class="title2Section">Choose a store theme</h2>
+                                <p>Browse a wide range of free and paid themes.</p>
+                                <a href="#" class="linkText">Theme Store</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="store-info ">
+                                <h2 class="title2Section">Level up with apps</h2>
+                                <p>Add more features to your store with apps from trusted Shopify partners.</p>
+                                <a href="#" class="linkText">Shopify App Store</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+
+            <!-- Section 3 -->
+            <section
+                class="Section3 bg-dark text-white d-flex justify-content-center align-items-center text-center p-5 w-100 ">
+                <div class="colum  ">
+                    <div class="screen1">
+                        <p>I had all my signs and my branding ready to go and it was a matter of is this going to work…
+                            but people loved it, it just in my head.</p>
+                        <p><strong>Deena</strong> — Baby Wisp</p>
+                    </div>
+
+
+                    <div class="screen2">
+                        <p>Building a website isn’t enough, you really have to promote it.</p>
+                        <p><strong>Julie</strong> — Province Apothecary</p>
+                    </div>
+
+                    <div>
+                        <button class="prev"><i class="fa fa-chevron-left"></i></button>
+                        <button class="play" id="playButton"><i class="fa fa-play"></i></button>
+                        <button class="next"><i class="fa fa-chevron-right"></i></button>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Section 4 -->
+            <section class="Section4  p-5 justify-content-center d-flex w-100 ">
+                <div class="colum  align-items-center">
+                    <div class="align-items-center text-center ">
+                        <p class="descriptionSection2">BRANDING TOOLS</p>
+                        <h2 class="titleSection">Build your brand</h2>
+                        <p class="descriptionSection">Craft the look and feel of your brand and help customers connect
+                            with your business.</p>
+                    </div>
+                    <div class="row align-items-center">
+
+                        <div class="col-md-6">
+                            <img src="img/photo4.png" alt="Hero Image" class="img-fluid w-100" id="imageSection4">
+                        </div>
+
+                        <div class=" col-md-6 ">
+                            <div class="infoSection4 mb-4 ">
+                                <h2 class="title2Section">Generate a business name</h2>
+                                <p>Find a name that fits your personality and business idea.</p>
+                                <a href="#" class="linkText">Business Name Generator </a>
+                            </div>
+                            <div class="infoSection4 ">
+                                <h2 class="title2Section">Create a free logo</h2>
+                                <p>Stand out from the competition and make your business unforgettable.</p>
+                                <a href="#" class="linkText">Logo Maker </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </section>
+
+
+            <!-- Section 5 -->
+            <section class="Section5  p-5 justify-content-center d-flex w-100 ">
+
+                <div class="row align-items-center">
+
+                    <div class=" col-md-6 ">
+                        <div class="infoSection4 mb-4 ">
+                            <h2 class="title2Section">Get a custom web domain</h2>
+                            <p>Establish your business and let customers find your store online.</p>
+                            <a href="#" class="linkText">Domain Name Generator </a>
+                        </div>
+                        <div class="infoSection4 ">
+                            <h2 class="title2Section">Domain Name Generator </h2>
+                            <p>Personalize your website with free, high resolution images from Burst.</p>
+                            <a href="#" class="linkText">Explore Burst </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img src="img/photo5.png" alt="Hero Image" class="img-fluid" id="imageSection4">
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Section 6 -->
+            <section class="Section6 p-5 ">
+                <div class="colum align-items-center">
+                    <div class="align-items-center pt-5 pb-5">
+                        <div class="textSection2 text-center">
+                            <p class="descriptionSection2">PRODUCT SOURCING</p>
+                            <h2 class="titleSection">Find products to sell</h2>
+                            <p class="descriptionSection">Stock your store with products from trusted wholesale and
+                                dropshipping services.</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img src="img/photo6.png" alt="Hero Image" class="img-fluid w-100">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Source from wholesalers with Faire</h2>
+                                <p>Find and buy unique products for your online store from thousands of trusted,
+                                    independent brands.</p>
+                                <a href="#" class="linkText">Start shopping wholesale</a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/photo7.png" alt="Hero Image" class="img-fluid w-100">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Jumpstart your dropshipping business here</h2>
+                                <p>Source and sell in-demand products without the hassle of managing inventory,
+                                    packaging, or shipping.</p>
+                                <a href="#" class="linkText">Discover dropshipping today</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+
+
+            <!-- Section 7 -->
+            <section class="Section7">
+                <div class="colum ">
+                    <div class="col-md-8 w-100">
+                        <h2 class="h2Section7 text-white">Every tool you need to power your business.</h2>
+                    </div>
+                    <div class="col-md-4 w-100">
+                        <button class="btn btn-primary btn-lg">Start free trial</button>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Section 8 -->
+            <section class="Section8 p-5 ">
+                <div class="colum align-items-center">
+                    <div class="align-items-center pt-5 pb-5">
+                        <h2 class="titleSection">Keep learning with free resources</h2>
+
+                    </div>
+
+
+
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img src="img/1.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Online Courses</h2>
+                                <p>Find out how to build and grow a profitable business.</p>
+                                <a href="#" class="linkText">Online Courses</a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/2.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Podcasts</h2>
+                                <p>Tune in for actionable advice and business tips.</p>
+                                <a href="#" class="linkText">Listen in </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/1.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Blog</h2>
+                                <p>Explore a collection of resources about starting your own business.</p>
+                                <a href="#" class="linkText">Browse our blog </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/2.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Guides</h2>
+                                <p>Learn <a id="linkSection8" href="#">how to start a small business</a> with a variety
+                                    of guides.</p>
+                                <a href="#" class="linkText">Explore guides </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+
+
+            <!-- Section 9 -->
+            <section class="Section9 p-5 ">
+                <div class="textSection1 text-center">
+                    <h2 class="titleSection">Start selling with Shopify today</h2>
+                    <p class="descriptionSection">Try Shopify for free, and explore all the tools and services you need
+                        to start, run, and grow your business.</p>
+                    <button id="btnSection9" class="btn mb-3">Start free trial</button>
+                    <p class="description2Section1">Get 3 days free then 1 month for $1.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-links p-5">
+                <div class="colum  justify-content-center  ">
+                    <div class="row">
+                        <div class="footer-section">
+                            <h3>Shopify</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">About</a></li>
+                                <li><a class="aLink" href="#">Careers</a></li>
+                                <li><a class="aLink" href="#">Investors</a></li>
+                                <li><a class="aLink" href="#">Press and Media</a></li>
+                                <li><a class="aLink" href="#">Partners</a></li>
+                                <li><a class="aLink" href="#">Affiliates</a></li>
+                                <li><a class="aLink" href="#">Legal</a></li>
+                                <li><a class="aLink" href="#">Service status</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Support</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Merchant support</a></li>
+                                <li><a class="aLink" href="#">Help center</a></li>
+                                <li><a class="aLink" href="#">Hire a Partner</a></li>
+                                <li><a class="aLink" href="#">Shopify Community</a></li>
+                                <li><a class="aLink" href="#">Shopify Events</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Developers</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Shopify.dev</a></li>
+                                <li><a class="aLink" href="#">API documentation</a></li>
+                                <li><a class="aLink" href="#">Dev Degree</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Products</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Shop</a></li>
+                                <li><a class="aLink" href="#">Shop Pay</a></li>
+                                <li><a class="aLink" href="#">Shopify Plus</a></li>
+                                <li><a class="aLink" href="#">Shopify Fulfillment Network</a></li>
+                                <li><a class="aLink" href="#">Linkpop</a></li>
+                                <li><a class="aLink" href="#">Shopify for enterprise</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Global impact</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Sustainability</a></li>
+                                <li><a class="aLink" href="#">Social impact</a></li>
+                                <li><a class="aLink" href="#">Build Black</a></li>
+                                <li><a class="aLink" href="#">Build Native</a></li>
+                                <li><a class="aLink" href="#">Research</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Solutions</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Online store builder</a></li>
+                                <li><a class="aLink" href="#">Website builder</a></li>
+                                <li><a class="aLink" href="#">Ecommerce website</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="row d-flex justify-content-between  border-top pt-4 pb-4 ">
+                        <div>
+                            <select id="language-select">
+                                <option value="ar">العربية</option>
+                                <option value="en" selected>English</option>
+                            </select>
+                        </div>
+                        <div class="row  list-unstyled  ">
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Terms of Service</a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Privacy Policy</a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Sitemap</a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Privacy Choices</a></li>
+
+                        </div>
+                        <div class="row list-unstyled">
+                            <li style="padding-right: 30px;"><a class="aLink" href="#"><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#"><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#"><i
+                                        class="fab fa-instagram"></i></a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+    </div>
+
+
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let screen1 = document.querySelector(".screen1");
+            let screen2 = document.querySelector(".screen2");
+            let playButton = document.getElementById("playButton");
+            let isPlaying = false; // تحديد حالة التشغيل
+            let intervalId;
+
+            function showScreen1() {
+                if (screen2.style.display === "block") {
+                    screen1.style.display = "block";
+                    screen2.style.display = "none";
+                } else {
+                    screen1.style.display = "none";
+                    screen2.style.display = "block";
+                }
+            }
+
+            function showScreen2() {
+                if (screen1.style.display === "block") {
+                    screen2.style.display = "block";
+                    screen1.style.display = "none";
+                } else {
+                    screen2.style.display = "none";
+                    screen1.style.display = "block";
+                }
+            }
+
+            let prev = document.querySelector(".prev");
+            let next = document.querySelector(".next");
+            prev.addEventListener("click", showScreen1);
+            next.addEventListener("click", showScreen2);
+
+
+
+
+            // وظيفة التبديل التلقائي بين الشاشات
+            function autoPlay() {
+                intervalId = setInterval(() => {
+                    if (screen1.style.display === "block") {
+                        showScreen2();
+                    } else {
+                        showScreen1();
+                    }
+                }, 3000); // فاصل زمني بين التبديل بالميلي ثانية (هنا 3000 تعني 3 ثواني)
+                isPlaying = true;
+                playButton.innerHTML = '<i class="fa fa-pause"></i>'; // تغيير الرمز لزر الإيقاف
+            }
+
+            playButton.addEventListener("click", () => {
+                if (isPlaying) {
+                    clearInterval(intervalId); // إيقاف التشغيل التلقائي إذا كان مشغّلاً
+                    isPlaying = false;
+                    playButton.innerHTML = '<i class="fa fa-play"></i>'; // تغيير الرمز لزر التشغيل
+                } else {
+                    autoPlay(); // بدء التشغيل التلقائي إذا كان متوقفًا
+                }
+            });
+
+
+
+
+
+
+        });
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+</body>
+
+</html>

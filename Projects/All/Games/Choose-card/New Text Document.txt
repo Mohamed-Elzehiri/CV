@@ -1,0 +1,522 @@
+
+        // Function to generate cards
+        function generateCards(numCards) {
+
+            for (let container of cardContainer) {
+                for (let i = 0; i < numCards; i++) {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    container.appendChild(card);
+                }
+            }
+        }
+
+        // Generate cards for each difficulty level
+        generateCards(3); // Easy (3 cards)
+        generateCards(6); // Medium (6 cards)
+        generateCards(9); // Hard (9 cards)
+
+
+
+
+
+
+        function generateCards(numCards, containerId) {
+            for (let i = 0; i < 3; i++) {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                container.appendChild(card);
+            }
+        }
+
+        // Generate cards for each difficulty level
+        generateCards(3, 'sceneGameEasy'); // Easy (3 cards) in sceneGameEasy container
+        generateCards(6, 'sceneGameMedium'); // Medium (6 cards) in sceneGameMedium container
+        generateCards(9, 'sceneGameHard'); // Hard (9 cards) in sceneGameHard container
+
+
+
+===================
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" -->
+
+
+    <title>Game Number</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+            direction: rtl;
+
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: rgb(206, 18, 18);
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+            border: 10px solid rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        #Attempts {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 2%;
+        }
+
+        #level {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 2%;
+        }
+
+        #Wrong {
+            position: absolute;
+            top: 2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        /* Chrome, Safari, Edge */
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        /* Firefox */
+        scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+
+        #sceneStartGame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1%;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #startGameBtn {
+            margin-top: 4vh;
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 5;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+        }
+
+        p {
+            font-size: 35px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+        }
+
+
+        #sceneGame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1%;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        button {
+            width: 100%;
+            height: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            background-color: brown;
+            border: none;
+            border-radius: 10px;
+            padding: 1%;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        #easyBtn {
+            background-color: green;
+        }
+
+        #mediumBtn {
+            background-color: rgb(176, 151, 11);
+        }
+
+        #backMenu {
+            background-color: blue;
+
+        }
+
+        #sceneGame,
+        #sceneEasy,
+        #sceneMedium,
+        #sceneHard,
+        #backMenu {
+            display: none;
+        }
+
+        #backMenuBtn {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(189, 24, 24);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        .hide {
+            opacity: 0;
+        }
+
+
+
+        /* Card styles */
+        .card {
+            width: 100px;
+            /* Adjust card width as needed */
+            height: 100px;
+            /* Adjust card height as needed */
+            background-color: #ccc;
+            /* Default card color */
+            border: 1px solid #ddd;
+            cursor: pointer;
+            /* Indicate clickable cards */
+            display: none;
+            /* Hide cards initially */
+        }
+
+        .card.selected {
+            background-color: #0f0;
+            /* Green color for correct guess */
+        }
+
+        .card.flipped {
+            background-color: #f00;
+            /* Red color for flipped card */
+        }
+
+        /* Card container styles */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <p id="Attempts">المحاولات : <span></span></p>
+        <p id="level">المستوى : <span></span></p>
+        <p id="Wrong">المحاولات الخاطئة : <span></span></p>
+
+
+        <div id="sceneStartGame">
+
+            <h1>لعبة اختيار الرقم <i class="fa-solid fa-arrow-left"></i></h1>
+            <button id="startGameBtn"><i class="fa-solid fa-play"></i> Start </button>
+
+        </div>
+
+        <div id="sceneGame">
+
+            <div id="menu">
+                <p>اختر مستوى اللعب <i class="fa-solid fa-arrow-left"></i></p>
+                <button id="easyBtn">سهل <i class="fa-regular fa-face-grin"></i></button>
+                <button id="mediumBtn">متوسط <i class="fa-regular fa-face-frown-open"></i></button>
+                <button id="hardBtn">صعب <i class="fa-regular fa-face-frown"></i></button>
+
+            </div>
+
+
+
+        </div>
+
+        <div id="sceneEasy">
+
+            <div id="sceneGameEasy">
+                <div class="card-container" id="cardsEasy"></div>
+            </div>
+
+        </div>
+
+        <div id="sceneMedium">
+
+            <div id="sceneGameMedium">
+                <div class="card-container" id="cardsMedium"></div>
+            </div>
+
+        </div>
+
+        <div id="sceneHard">
+
+            <div id="sceneGameHard">
+                <div class="card-container" id="cardsHard"></div>
+            </div>
+
+        </div>
+
+        <button id="backMenuBtn" class="hide"> back <i class="fa fa-home" style="font-size:30px;"></i> </button>
+        <button id="nextBtn" class="hide"> التالي <i class="fa-solid fa-arrow-right"></i></button>
+        <div id="message"></div>
+
+    </div>
+
+
+
+
+    <script>
+
+        let sceneStartGame = document.getElementById("sceneStartGame");
+        let sceneGame = document.getElementById("sceneGame");
+        let startGameBtn = document.getElementById("startGameBtn");
+        let sceneEasy = document.getElementById("sceneEasy");
+        let sceneMedium = document.getElementById("sceneMedium");
+        let sceneHard = document.getElementById("sceneHard");
+        let backMenuBtn = document.getElementById("backMenuBtn");
+        let easyBtn = document.getElementById("easyBtn");
+        let mediumBtn = document.getElementById("mediumBtn");
+        let hardBtn = document.getElementById("hardBtn");
+        let cardContainer = document.querySelector(".card-container");
+
+        let audio = new Audio("beautiful.mp3");
+
+
+        let Attempts = document.getElementById('Attempts').querySelector('span');
+        let level = document.getElementById('level').querySelector('span');
+        let Wrong = document.getElementById('Wrong').querySelector('span');
+
+
+
+        // Function to generate cards
+        function generateCards(containerId, numCards) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = ''; // Clear existing cards
+
+            for (let i = 0; i < numCards; i++) {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.addEventListener('click', handleCardClick);
+                container.appendChild(card);
+            }
+        }
+
+        function handleCardClick(event) {
+            const card = event.target;
+            if (card.classList.contains('flipped')) return; // Ignore already flipped cards
+
+            card.classList.add('flipped');
+
+            // Check if the card is the correct one
+            if (card.textContent === correctNumber) { // Replace 'correctNumber' with actual logic
+                card.classList.add('selected'); // Mark correct guess visually
+                attempts--; // Decrement attempts remaining
+
+                // Check for win condition
+                if (attempts > 0) {
+                    showMessage('ممتاز! لقد وجدت الرقم'); // Display win message (adjustable)
+                    showNextButton(); // Enable "Next Level" button
+                } else {
+                    showMessage('لقد خسرت! المحاولات انتهت'); // Display lose message (adjustable)
+                    disableCards(); // Disable clicking on cards after loss
+                }
+            } else {
+                attempts--;
+                Wrong.textContent = attempts; // Update wrong guesses counter
+                showMessage('حاول مرة أخرى'); // Display "Try Again" message (adjustable)
+
+                // Check for lose condition after a wrong guess
+                if (attempts === 0) {
+                    showMessage('لقد خسرت! المحاولات انتهت'); // Display lose message (adjustable)
+                    disableCards(); // Disable clicking on cards after loss
+                }
+            }
+        }
+
+
+        startGameBtn.addEventListener("click", () => {
+            sceneStartGame.style.display = "none";
+            sceneGame.style.display = "block";
+            audio.play();
+        });
+
+
+        backMenuBtn.addEventListener("click", () => {
+            sceneStartGame.style.display = "block";
+            sceneGame.style.display = "none";
+            audio.pause();
+            audio.currentTime = 0;
+            sceneEasy.style.display = "none";
+            sceneMedium.style.display = "none";
+            sceneHard.style.display = "none";
+
+            Attempts.textContent = '';
+            level.textContent = '';
+            Wrong.textContent = '';
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('show')) {
+                backMenuBtn.classList.remove('show');
+            } else {
+                backMenuBtn.classList.add('hide');
+            }
+        });
+
+
+        easyBtn.addEventListener("click", () => {
+            sceneEasy.style.display = "block";
+            sceneGame.style.display = "none";
+            sceneMedium.style.display = "none";
+            sceneHard.style.display = "none";
+            audio.play();
+
+            Attempts.textContent = '3';
+            level.textContent = 'سهل';
+            Wrong.textContent = '0';
+            generateCards('cardsEasy', 3); // Generate 3 cards for easy level
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('hide')) {
+                backMenuBtn.classList.remove('hide');
+            } else {
+                backMenuBtn.classList.add('show');
+            }
+        });
+
+
+        mediumBtn.addEventListener("click", () => {
+            sceneMedium.style.display = "block";
+            sceneGame.style.display = "none";
+            sceneEasy.style.display = "none";
+            sceneHard.style.display = "none";
+            audio.play();
+
+            Attempts.textContent = '2';
+            level.textContent = 'متوسط';
+            Wrong.textContent = '0';
+            generateCards('cardsMedium', 6); // Generate 6 cards for medium level
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('hide')) {
+                backMenuBtn.classList.remove('hide');
+            } else {
+                backMenuBtn.classList.add('show');
+            }
+        });
+
+
+        hardBtn.addEventListener("click", () => {
+            sceneHard.style.display = "block";
+            sceneGame.style.display = "none";
+            sceneEasy.style.display = "none";
+            sceneMedium.style.display = "none";
+            audio.play();
+
+            Attempts.textContent = '1';
+            level.textContent = 'صعب';
+            Wrong.textContent = '0';
+            generateCards('cardsHard', 9); // Generate 9 cards for hard level
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('hide')) {
+                backMenuBtn.classList.remove('hide');
+            } else {
+                backMenuBtn.classList.add('show');
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
+
+
+=======================
+

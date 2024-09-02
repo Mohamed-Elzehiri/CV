@@ -1,0 +1,119 @@
+body{
+    background-image:url(image/login.jpg);
+             background-size:cover;
+             position:relative;
+}           
+.discount{
+    margin-top:300px;
+}    
+.discount .content{
+    text-align:center;
+    padding:0 20px;
+}
+.discount .content h2{
+    letter-spacing:-2px;
+    font-size:60px;
+    color:#ff80b3cc;
+    position:relative;
+}
+.discount .content h2::Before{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translatex(-50%);
+    height:3px;
+    width:100%;
+    background-color:#ff80b3cc ;
+    top:-30px;
+}
+.discount .content h2::After{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translatex(-50%);
+    height:3px;
+    width:100%;
+    background-color:#ff80b3cc ;
+    bottom:-30px;
+}
+.discount .content p{
+    color:#96907d;
+}
+.discount .form{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-basis:50%;
+}
+.discount .form .input{
+    display:block;
+    width:100%;
+    margin-bottom:25px;
+    border-radius:10px;
+    padding:15px;
+    border:none;
+    border-bottom:1px solid #ccc;
+    background-color:#f9f9f9;
+    caret-color:#ff80b3cc;
+}
+.discount .form .input:hover{
+    border-bottom:2px solid #ff80b3cc;
+}
+.discount .form .input:focus{
+    outline:none;
+}
+.discount .form [type="submit"]{
+    display:block;
+    width:110%;
+    padding:18px;
+    margin-bottom:20px;
+    background-color:#ff80b3cc;
+    color:white;
+    font-weight:bold;
+    font-size:25px;
+    cursor:pointer;
+    border:none;
+    outline:none;
+    border-radius:12px;
+}
+.discount .form [type="submit"]:hover{
+    background-color:#ffaab5cc;
+    
+}
+.discount a {
+    color:#96325d;
+    text-decoration:none;
+}
+.discount .bullets li{
+     width:20px;
+     height:20px;
+     border:1px solid #ff80b3cc;
+     border-radius:50%;
+     margin-right:10px;            
+}
+.discount .bullets li.active{
+     background-color:#ff80b3cc;
+     border-color:#ff80b3cc;
+}
+.discount ul{
+    list-style:none;
+    display:flex;
+    margin-top:300px;
+}
+.discount ul{
+    animation:move 5s infinite;
+
+}
+   
+@keyframes move {
+    0%,60%,100%{
+    transform:translatex(0);
+  }
+  20%,40%{
+    transform:translatex(200px);
+  }
+  80%,90%{
+    transform:translatex(-200px);
+  }
+}
+}

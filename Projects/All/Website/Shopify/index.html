@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.25rem;
+            overflow-x: hidden;
+
+        }
+
+
+.container{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+        .navbar {
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            color: white;
+        }
+
+        .navbar-scrolled {
+            background-color: black;
+            color: white;
+        }
+
+        .btn-login {
+            background-color: transparent;
+            color: white;
+        }
+
+        .btn-trial {
+            color: #000;
+
+        }
+
+        #bg-video {
+            margin: 0;
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            width: 100%;
+            max-width: auto;
+            z-index: -1;
+        }
+
+        .textSection1 {
+            align-items: center;
+            margin-top: 20%;
+            color: rgb(255, 255, 255);
+            margin-bottom: 15%;
+        }
+
+        .Section2 {
+            margin-bottom: 10%;
+        }
+
+
+        .borderSection2 {
+            border-left: 3px solid #000000;
+            margin: 5%;
+        }
+
+        .Section3 {
+            margin: 10%;
+        }
+
+        .card-link {
+            font-weight: bold;
+            color: black;
+        }
+
+        .card-text {
+            color: #666;
+        }
+
+        .backgroundSection3 {
+            border-radius: 20px;
+            margin: 5%;
+        }
+
+        .Section5 {
+            margin: 10%;
+        }
+
+        .linkText {
+            position: relative;
+            color: green;
+            text-decoration: underline;
+            font-size: 1.25rem;
+            font-weight: bold;
+
+        }
+
+        .linkText:hover {
+
+            text-decoration: none;
+            color: red;
+
+        }
+
+        .linkText::after {
+            content: '\27A4';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .linkText:hover::after {
+            opacity: 1;
+        }
+
+
+
+        .store-info {
+            border-top: 3px solid #000;
+        }
+
+        #imageSection4 {
+            margin: 5% 0;
+        }
+
+        .Section6 {
+            background-color: #000;
+            color: white;
+        }
+
+
+
+        #linkSection8 {
+            text-decoration: underline;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .Section9 {
+            background: linear-gradient(to right, #19bd63, #5fd5b55b);
+
+        }
+
+        .linkBtn,
+        #btnSection9 {
+            border-radius: 20px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .linkBtn:hover {
+            background-color: #19bd63;
+            color: white;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .footer-section {
+            margin: 0 20px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+
+        .aLink {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+
+        }
+
+        .aLink:hover {
+            text-decoration: none;
+            color: #19bd63;
+        }
+
+        .img-fluid {
+            max-height: 50%;
+        }
+
+
+        /*---------- 4K -----------*/
+
+        @media only screen and (max-width: 2560px) {
+
+            .container {
+                max-width: 2560px;
+
+            }
+        }
+
+        /*---------- Laptop L -----------*/
+
+        @media only screen and (max-width: 1440px) {
+
+            lml .container {
+                max-width: 1440px;
+
+            }
+        }
+
+        /*---------- Laptop -----------*/
+
+        @media only screen and (max-width: 1024px) {
+
+            .container {
+                max-width: 1024px;
+
+            }
+        }
+
+        /*---------- Tablet -----------*/
+
+        @media only screen and (max-width: 768px) {
+
+            .container {
+                max-width: 768px;
+
+            }
+        }
+
+        /*---------- mobile L -----------*/
+
+        @media only screen and (max-width: 425px) {
+
+            .container {
+                max-width: 425px;
+
+            }
+        }
+
+        /*---------- mobile M -----------*/
+
+        @media only screen and (max-width: 375px) {
+
+            .container {
+                max-width: 375px;
+
+            }
+        }
+
+        /*---------- mobile S -----------*/
+
+
+        @media only screen and (max-width: 320px) {
+
+            .container {
+                max-width: 320px;
+
+            }
+
+            .h2Section7 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/Shopify-Logo.png" alt="Shopify Logo" class="logo1"
+                            style="max-width: 200px; max-height: 50px;">
+                        <span class="ms-2" id="logoText">Shopify</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    Solutions
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                                    <li><span class="dropdown-header">Start</span></li>
+                                    <li><a class="dropdown-item" href="#">Start your business</a></li>
+                                    <li><a class="dropdown-item" href="#">Create your website</a></li>
+                                    <li><a class="dropdown-item" href="#">Customize your store</a></li>
+                                    <li><a class="dropdown-item" href="#">Find business apps</a></li>
+                                    <li><a class="dropdown-item" href="#">Own your site domain</a></li>
+                                    <li><a class="dropdown-item" href="#">Explore free business tools</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Sell</span></li>
+                                    <li><a class="dropdown-item" href="#">Sell your products</a></li>
+                                    <li><a class="dropdown-item" href="#">Check out customers</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell online</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell across channels</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell in person</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell globally</a></li>
+                                    <li><a class="dropdown-item" href="#">Sell wholesale</a></li>
+                                    <li><a class="dropdown-item" href="#">Accept online payments</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Market</span></li>
+                                    <li><a class="dropdown-item" href="#">Market your business</a></li>
+                                    <li><a class="dropdown-item" href="#">Market across social</a></li>
+                                    <li><a class="dropdown-item" href="#">Chat with customers</a></li>
+                                    <li><a class="dropdown-item" href="#">Nurture customers</a></li>
+                                    <li><a class="dropdown-item" href="#">Know your audience</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="ResourcesDropdown" role="button"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="ResourcesDropdown">
+                                    <li><span class="dropdown-header">Help and support</span></li>
+                                    <li><a class="dropdown-item" href="#">Help and support</a></li>
+                                    <li><a class="dropdown-item" href="#">How-to guides</a></li>
+                                    <li><a class="dropdown-item" href="#">Business courses</a></li>
+                                    <li><a class="dropdown-item" href="#">Shopify blog</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Popular</span></li>
+                                    <li><a class="dropdown-item" href="#">What is Shopify?</a></li>
+                                    <li><a class="dropdown-item" href="#">Shopify Editions</a></li>
+                                    <li><a class="dropdown-item" href="#">Founder stories</a></li>
+                                    <li><a class="dropdown-item" href="#">Branding</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><span class="dropdown-header">Marketing</span></li>
+                                    <li><a class="dropdown-item" href="#">Build a marketing plan</a></li>
+                                    <li><a class="dropdown-item" href="#">commerce SEO</a></li>
+                                    <li><a class="dropdown-item" href="#">Social media strategy</a></li>
+                                    <li><a class="dropdown-item" href="#">Business growth</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="whatsNewDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    What's new
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="whatsNewDropdown">
+                                    <li><a class="dropdown-item" href="#">Changelog</a></li>
+                                    <li><a class="dropdown-item" href="#">Winter '24 Edition</a></li>
+                                    <li><a class="dropdown-item" href="#">All Editions</a></li>
+                                    <li><a class="dropdown-item" href="#">Newsroom</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-login  m-2">Log in</button>
+                            <button class="btn btn-trial bg-white m-2">Start free trial</button>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+
+
+        <main>
+            <!-- Section 1 -->
+            <section class="Section1 ">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-12">
+                            <video autoplay muted loop id="bg-video">
+                                <source src="video/1.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="textSection1 text-center">
+                                <h2 class="titleSection">Making Commerce Better for Everyone</h2>
+                                <p class="descriptionSection">Shopify is supporting the next generation of
+                                    entrepreneurs,
+                                    the world’s biggest brands, and everyone in between</p>
+                                <button id="btnSection1" class="btn mb-3 bg-success">Start free trial</button>
+                                <p class="description2Section1">Get 3 days free then 1 month for $1.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Section 2 -->
+            <section class="Section2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <!-- Canvas for Earth Globe -->
+                            <canvas id="earthCanvas"></canvas>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-center">Discover why millions of entrepreneurs chose Shopify to build
+                                        their business — from hello world to IPO.</p>
+                                </div>
+                            </div>
+                            <div class="row testSection2">
+                                <div class="col borderSection2">
+                                    <h2 class="text-center">Millions</h2>
+                                    <p class="text-center">of merchants worldwide</p>
+                                </div>
+                                <div class="col borderSection2">
+                                    <h2 class="text-center">10%</h2>
+                                    <p class="text-center">of total US ecommerce</p>
+                                </div>
+                                <div class="col borderSection2">
+                                    <h2 class="text-center">170+</h2>
+                                    <p class="text-center">countries represented</p>
+                                </div>
+                                <div class="col borderSection2">
+                                    <h2 class="text-center">$444B</h2>
+                                    <p class="text-center">global economic activity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- Section 3 -->
+            <section class="Section3">
+                <div class="container ">
+                    <div class="col text-center">
+                        EXPLORE THE WORLD'S LARGEST COMMERCE COMMUNITY
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <div class="store-info bg-white p-4 backgroundSection3">
+                                <img src="img/1.svg" alt="Hero Image" class="imgSection8">
+                                <a href="#" class="card-link">Enterprise</a>
+                                <p class="card-text">The modern, composable stack for enterprise retail</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-4">
+                            <div class="store-info bg-white p-4 backgroundSection3">
+                                <img src="img/2.svg" alt="Hero Image" class="imgSection8">
+                                <a href="#" class="card-link">Enterprise</a>
+                                <p class="card-text">The modern, composable stack for enterprise retail</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="store-info bg-white p-4 backgroundSection3">
+                                <img src="img/3.svg" alt="Hero Image" class="imgSection8">
+                                <a href="#" class="card-link">Enterprise</a>
+                                <p class="card-text">The modern, composable stack for enterprise retail</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="store-info bg-white p-4 backgroundSection3">
+                                <img src="img/4.svg" alt="Hero Image" class="imgSection8">
+                                <a href="#" class="card-link">Enterprise</a>
+                                <p class="card-text">The modern, composable stack for enterprise retail</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Section 4 -->
+            <section class="Section4 p-5">
+                <div class="colum align-items-center">
+                    <div class="align-items-center ">
+                        <div class="textSection2 text-center">
+                            <p class="descriptionSection2">BUILD AN ONLINE STORE</p>
+                            <h2 class="titleSection">Your store, your way</h2>
+                        </div>
+                    </div>
+                    <div class="align-items-center ">
+                        <img src="img/photo3.png" alt="Hero Image" class="img-fluid w-100 ">
+                    </div>
+
+
+                    <div class="row align-items-center  pt-5 ">
+                        <div class="col-md-4 mb-4 ">
+                            <div class="store-info ">
+                                <h2 class="title2Section">Build an online storefront</h2>
+                                <p>Bring your vision to life with our drag-and-drop store creator. No coding expertise
+                                    required
+                                    — just your next big idea.</p>
+                                <a href="#" class="linkText">Online Store Builder</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="store-info ">
+                                <h2 class="title2Section">Craft the brand you want</h2>
+                                <p>Select from customizable templates created by a community of world-class designers.
+                                </p>
+                                <a href="#" class="linkText">Theme Store</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="store-info ">
+                                <h2 class="title2Section">Level up with apps</h2>
+                                <p>Add more features and functionality to your online store with apps built by trusted
+                                    Shopify
+                                    developers.</p>
+                                <a href="#" class="linkText">Shopify App Store</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+
+
+
+            <!-- Section 5 -->
+            <section class="Section5">
+                <div class="container">
+                    <div class="colum">
+                        <!-- First column for text content -->
+                        <div class="row">
+                            <div class="col">
+                                <p class="descriptionSection2">SALES CHANNELS</p>
+                                <h2 class="titleSection">Sell to every buyer, everywhere</h2>
+                            </div>
+                            <div class="col">
+                                <p class="descriptionSection2">Sell online, in person, and around the world with the
+                                    marketing
+                                    tools, social integrations, and sales channels you need to get your products in
+                                    front of
+                                    customers.</p>
+                                <a href="#">Start selling</a>
+                            </div>
+                        </div>
+                        <!-- Second column for images -->
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/2/4.png" alt="Hero Image" class="img-fluid w-100" id="imageSection4">
+                            </div>
+                            <div class="col">
+                                <img src="img/2/5.png" alt="Hero Image" class="img-fluid w-100" id="imageSection4">
+                            </div>
+                            <div class="col">
+                                <img src="img/2/6.png" alt="Hero Image" class="img-fluid w-100" id="imageSection4">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Section 5 -->
+            <section class="Section5  p-5 justify-content-center d-flex w-100 ">
+
+                <div class="row align-items-center">
+
+                    <div class=" col-md-6 ">
+                        <div class="infoSection4 mb-4 ">
+                            <h2 class="title2Section">Get a custom web domain</h2>
+                            <p>Establish your business and let customers find your store online.</p>
+                            <a href="#" class="linkText">Domain Name Generator </a>
+                        </div>
+                        <div class="infoSection4 ">
+                            <h2 class="title2Section">Domain Name Generator </h2>
+                            <p>Personalize your website with free, high resolution images from Burst.</p>
+                            <a href="#" class="linkText">Explore Burst </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img src="img/photo5.png" alt="Hero Image" class="img-fluid" id="imageSection4">
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Section 6 -->
+            <section class="Section6 p-5 ">
+                <div class="colum align-items-center">
+                    <div class="align-items-center pt-5 pb-5">
+                        <div class="textSection2 text-center">
+                            <p class="descriptionSection2">PRODUCT SOURCING</p>
+                            <h2 class="titleSection">Find products to sell</h2>
+                            <p class="descriptionSection">Stock your store with products from trusted wholesale and
+                                dropshipping services.</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img src="img/photo6.png" alt="Hero Image" class="img-fluid w-100">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Source from wholesalers with Faire</h2>
+                                <p>Find and buy unique products for your online store from thousands of trusted,
+                                    independent brands.</p>
+                                <a href="#" class="linkText">Start shopping wholesale</a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/photo7.png" alt="Hero Image" class="img-fluid w-100">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Jumpstart your dropshipping business here</h2>
+                                <p>Source and sell in-demand products without the hassle of managing inventory,
+                                    packaging, or shipping.</p>
+                                <a href="#" class="linkText">Discover dropshipping today</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+
+
+
+
+            <!-- Section 8 -->
+            <section class="Section8 p-5 ">
+                <div class="colum align-items-center">
+                    <div class="align-items-center pt-5 pb-5">
+                        <h2 class="titleSection">Keep learning with free resources</h2>
+
+                    </div>
+
+
+
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img src="img/1.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Online Courses</h2>
+                                <p>Find out how to build and grow a profitable business.</p>
+                                <a href="#" class="linkText">Online Courses</a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/2.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Podcasts</h2>
+                                <p>Tune in for actionable advice and business tips.</p>
+                                <a href="#" class="linkText">Listen in </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/1.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Blog</h2>
+                                <p>Explore a collection of resources about starting your own business.</p>
+                                <a href="#" class="linkText">Browse our blog </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="img/2.svg" alt="Hero Image" class="imgSection8">
+                            <div class="infoSection4 mb-4">
+                                <h2 class="title2Section">Guides</h2>
+                                <p>Learn <a id="linkSection8" href="#">how to start a small business</a> with a variety
+                                    of guides.</p>
+                                <a href="#" class="linkText">Explore guides </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+
+
+            <!-- Section 9 -->
+            <section class="Section9 p-5 ">
+                <div class="textSection1 text-center">
+                    <h2 class="titleSection">Start selling with Shopify today</h2>
+                    <p class="descriptionSection">Try Shopify for free, and explore all the tools and services you need
+                        to start, run, and grow your business.</p>
+                    <button id="btnSection9" class="btn mb-3">Start free trial</button>
+                    <p class="description2Section1">Get 3 days free then 1 month for $1.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-links p-5">
+                <div class="colum  justify-content-center  ">
+                    <div class="row">
+                        <div class="footer-section">
+                            <h3>Shopify</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">About</a></li>
+                                <li><a class="aLink" href="#">Careers</a></li>
+                                <li><a class="aLink" href="#">Investors</a></li>
+                                <li><a class="aLink" href="#">Press and Media</a></li>
+                                <li><a class="aLink" href="#">Partners</a></li>
+                                <li><a class="aLink" href="#">Affiliates</a></li>
+                                <li><a class="aLink" href="#">Legal</a></li>
+                                <li><a class="aLink" href="#">Service status</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Support</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Merchant support</a></li>
+                                <li><a class="aLink" href="#">Help center</a></li>
+                                <li><a class="aLink" href="#">Hire a Partner</a></li>
+                                <li><a class="aLink" href="#">Shopify Community</a></li>
+                                <li><a class="aLink" href="#">Shopify Events</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Developers</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Shopify.dev</a></li>
+                                <li><a class="aLink" href="#">API documentation</a></li>
+                                <li><a class="aLink" href="#">Dev Degree</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Products</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Shop</a></li>
+                                <li><a class="aLink" href="#">Shop Pay</a></li>
+                                <li><a class="aLink" href="#">Shopify Plus</a></li>
+                                <li><a class="aLink" href="#">Shopify Fulfillment Network</a></li>
+                                <li><a class="aLink" href="#">Linkpop</a></li>
+                                <li><a class="aLink" href="#">Shopify for enterprise</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Global impact</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Sustainability</a></li>
+                                <li><a class="aLink" href="#">Social impact</a></li>
+                                <li><a class="aLink" href="#">Build Black</a></li>
+                                <li><a class="aLink" href="#">Build Native</a></li>
+                                <li><a class="aLink" href="#">Research</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Solutions</h3>
+                            <ul>
+                                <li><a class="aLink" href="#">Online store builder</a></li>
+                                <li><a class="aLink" href="#">Website builder</a></li>
+                                <li><a class="aLink" href="#">Ecommerce website</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="row d-flex justify-content-between  border-top pt-4 pb-4 ">
+                        <div>
+                            <select id="language-select">
+                                <option value="ar">العربية</option>
+                                <option value="en" selected>English</option>
+                            </select>
+                        </div>
+                        <div class="row  list-unstyled  ">
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Terms of Service</a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Privacy Policy</a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Sitemap</a></li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#">Privacy Choices</a></li>
+
+                        </div>
+                        <div class="row list-unstyled">
+                            <li style="padding-right: 30px;"><a class="aLink" href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                            </li>
+                            <li style="padding-right: 30px;"><a class="aLink" href="#"><i
+                                        class="fab fa-instagram"></i></a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+
+
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar.offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+
+            if (scrollY > navbarHeight) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+
+
+
+        // Set up scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(100, window.innerWidth*0.8 / window.innerHeight*1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("earthCanvas"), alpha: true });
+        renderer.setSize(window.innerWidth * 0.4 , window.innerHeight* 0.4); // حجم canvas
+
+        // Create Earth geometry and texture
+        const geometry = new THREE.SphereGeometry(10, 64, 64);//حجم الكرة
+        const texture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg');
+        const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, opacity: 1 });
+
+        // Create Earth mesh
+        const earth = new THREE.Mesh(geometry, material);
+        scene.add(earth);
+
+        // Position camera
+        camera.position.z = 15;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            earth.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // تحديد العرض والارتفاع المطلوبين// تحديد العرض والارتفاع المطلوبين
+const desiredWidth = 600;
+const desiredHeight = 400;
+
+// العثور على عنصر canvas
+const canvas = document.getElementById("earthCanvas");
+
+// تعيين الأبعاد المطلوبة
+canvas.width = desiredWidth;
+canvas.height = desiredHeight;
+
+// تعيين الأنماط
+canvas.style.width = desiredWidth + "px";
+canvas.style.height = desiredHeight + "px";
+
+
+    </script>
+
+
+
+
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>copy table 4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="ابحث هنا..." />
+      <button class="search-btn" onclick="searchTable()"> بحث </button>
+    </div>
+
+    <table id="data-table">
+      <tr>
+        <th>id</th>
+        <th>الاسم</th>
+        <th>رقم الهاتف</th>
+        <th>الإيميل</th>
+        <th>تفاصيل</th>
+      </tr>
+      <tr>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+        <td contenteditable="true"></td>
+
+      </tr>
+    </table>
+
+    <button class="add-btn" onclick="addNewRow()">إضافة صف</button>
+
+    <script src="main.js"></script>
+  </body>
+</html>

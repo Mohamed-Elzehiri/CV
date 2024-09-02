@@ -1,0 +1,140 @@
+let attemptsLeft = 0; // عدد المحاولات المتبقية
+let correctCard = null; // البطاقة الصحيحة
+let won = false; // هل فاز اللاعب؟
+
+// دالة لتوليد أرقام عشوائية
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// دالة لبناء البطاقات
+function buildCards(container, count) {
+    container.innerHTML = ''; // تفريغ الحاوية من البطاقات القديمة
+    const numbers = Array.from({ length: count }, (_, index) => index + 1); // مصفوفة من الأرقام من 1 إلى count
+    correctCard = getRandomNumber(1, count); // اختيار رقم عشوائي للبطاقة الصحيحة
+    numbers.forEach(number => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.textContent = number;
+        // إضافة حدث النقر لكل بطاقة
+        card.addEventListener('click', () => {
+            // فحص ما إذا كانت هذه البطاقة هي البطاقة الصحيحة
+            if (number === correctCard && !won) {
+                won = true;
+                alert('لقد فزت!');
+                // إظهار زر التالي للمرحلة التالية
+                if (nextLevelBtn.classList.contains('hide')) {
+                    nextLevelBtn.classList.remove('hide');
+                }
+            } else if (!won) {
+                // إنقاص عدد المحاولات إذا كان اللاعب لم يفز بعد
+                attemptsLeft--;
+                Attempts.textContent = attemptsLeft;
+                if (attemptsLeft === 0) {
+                    alert('لقد خسرت!');
+                }
+            }
+        });
+        container.appendChild(card);
+    });
+}
+
+easyBtn.addEventListener("click", () => {
+    sceneEasy.style.display = "block";
+    sceneGame.style.display = "none";
+    sceneMedium.style.display = "none";
+    sceneHard.style.display = "none";
+    audio.play();
+
+    attemptsLeft = 3; // عدد المحاولات في المستوى السهل
+    Attempts.textContent = attemptsLeft;
+    won = false;
+    buildCards(document.querySelector("#sceneGameEasy .card-container"), 3);
+    level.textContent = 'سهل';
+    Wrong.textContent = '0';
+
+    if (backMenuBtn.classList.contains('hide')) {
+        backMenuBtn.classList.remove('hide');
+    } else {
+        backMenuBtn.classList.add('show');
+    }
+});
+
+mediumBtn.addEventListener("click", () => {
+    sceneMedium.style.display = "block";
+    sceneGame.style.display = "none";
+    sceneEasy.style.display = "none";
+    sceneHard.style.display = "none";
+    audio.play();
+
+    attemptsLeft = 2; // عدد المحاولات في المستوى المتوسط
+    Attempts.textContent = attemptsLeft;
+    won = false;
+    buildCards(document.querySelector("#sceneGameMedium .card-container"), 6);
+    level.textContent = 'متوسط';
+    Wrong.textContent = '0';
+
+    if (backMenuBtn.classList.contains('hide')) {
+        backMenuBtn.classList.remove('hide');
+    } else {
+        backMenuBtn.classList.add('show');
+    }
+});
+
+hardBtn.addEventListener("click", () => {
+    sceneHard.style.display = "block";
+    sceneGame.style.display = "none";
+    sceneEasy.style.display = "none";
+    sceneMedium.style.display = "none";
+    audio.play();
+
+    attemptsLeft = 1; // عدد المحاولات في المستوى الصعب
+    Attempts.textContent = attemptsLeft;
+    won = false;
+    buildCards(document.querySelector("#sceneGameHard .card-container"), 9);
+    level.textContent = 'صعب';
+    Wrong.textContent = '0';
+
+    if (backMenuBtn.classList.contains('hide')) {
+        backMenuBtn.classList.remove('hide');
+    } else {
+        backMenuBtn.classList.add('show');
+    }
+});
+
+// إعادة ضبط عدد المحاولات والفوز عند العودة للقائمة الرئيسية
+backMenuBtn.addEventListener("click", () => {
+    sceneStartGame.style.display = "block";
+    sceneGame.style.display = "none";
+    audio.pause();
+    audio.currentTime = 0;
+    sceneEasy.style.display = "none";
+    sceneMedium.style.display = "none";
+    sceneHard.style.display = "none";
+
+    attemptsLeft = 0;
+    Attempts.textContent = '';
+    level.textContent = '';
+    Wrong.textContent = '';
+
+    if (backMenuBtn.classList.contains('show')) {
+        backMenuBtn.classList.remove('show');
+    } else {
+        backMenuBtn.classList.add('hide');
+    }
+
+    won = false;
+});
+
+// زر التالي للمرحلة التالية
+const nextLevelBtn = document.createElement('button');
+nextLevelBtn.textContent = 'التالي';
+nextLevelBtn.classList.add('hide');
+nextLevelBtn.addEventListener('click', () => {
+    if (sceneEasy.style.display === "block") {
+        mediumBtn.click();
+    } else if (sceneMedium.style.display === "block") {
+        hardBtn.click();
+    }
+});
+document.body.appendChild(nextLevelBtn);

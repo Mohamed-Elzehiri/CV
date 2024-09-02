@@ -1,0 +1,37 @@
+/* styles.css */
+
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #guess-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  #guess-btn:hover {
+    opacity: 1;
+  }
+  
+  #result {
+    padding: 12px; 
+    background: #eee;
+    border: 1px solid #ddd;
+    margin-top: 12px;
+    border-radius: 4px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em; 
+  }
+  

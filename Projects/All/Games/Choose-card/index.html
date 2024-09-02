@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Game Number</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+            direction: rtl;
+
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: rgb(206, 18, 18);
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+            border: 10px solid rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        #Attempts {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 2%;
+        }
+
+        #level {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 2%;
+        }
+
+        #Wrong {
+            position: absolute;
+            top: 2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        /* Chrome, Safari, Edge */
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        /* Firefox */
+        scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+
+        #sceneStartGame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1%;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #startGameBtn {
+            margin-top: 4vh;
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 5;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+        }
+
+        p {
+            font-size: 35px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+        }
+
+
+        #sceneGame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1%;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        button {
+            width: 100%;
+            height: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            background-color: brown;
+            border: none;
+            border-radius: 10px;
+            padding: 1%;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        #easyBtn {
+            background-color: green;
+        }
+
+        #mediumBtn {
+            background-color: rgb(176, 151, 11);
+        }
+
+        #backMenu {
+            background-color: blue;
+
+        }
+
+        #sceneGame,
+        #sceneEasy,
+        #sceneMedium,
+        #sceneHard,
+        #backMenu {
+            display: none;
+        }
+
+        #backMenuBtn {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(189, 24, 24);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        .hide {
+            opacity: 0;
+        }
+
+
+
+        /* Card styles */
+        .card {
+            width: 100px;
+            height: 150px;
+            background-color: #ca1414;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .card.selected {
+            background-color: #0f0;
+            /* Green color for correct guess */
+        }
+
+        .card.flipped {
+            background-color: #f00;
+            /* Red color for flipped card */
+        }
+
+        /* Card container styles */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30vh;
+        }
+
+        .lost-message {
+            color: red;
+            /* لون النص */
+            font-size: 24px;
+            /* حجم الخط */
+            /* أي تنسيقات أخرى تريدها */
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <p id="Attempts">المحاولات : <span></span></p>
+        <p id="level">المستوى : <span></span></p>
+        <p id="Wrong">المحاولات الخاطئة : <span></span></p>
+
+
+        <div id="sceneStartGame">
+
+            <h1>لعبة اختيار الرقم </h1>
+            <button id="startGameBtn"> Start </button>
+
+        </div>
+
+        <div id="sceneGame">
+
+            <div id="menu">
+                <p>اختر مستوى اللعب </p>
+                <button id="easyBtn">سهل </button>
+                <button id="mediumBtn">متوسط </button>
+                <button id="hardBtn">صعب </button>
+
+            </div>
+
+
+
+        </div>
+
+        <div id="sceneEasy">
+
+            <div id="sceneGameEasy">
+                <div class="card-container" id="cardsEasy"></div>
+            </div>
+
+        </div>
+
+        <div id="sceneMedium">
+
+            <div id="sceneGameMedium">
+                <div class="card-container" id="cardsMedium"></div>
+            </div>
+
+        </div>
+
+        <div id="sceneHard">
+
+            <div id="sceneGameHard">
+                <div class="card-container" id="cardsHard"></div>
+            </div>
+
+        </div>
+
+        <button id="backMenuBtn" class="hide"> back </button>
+        <button id="nextBtn" class="hide"> التالي </button>
+        <div id="message" class="message"></div>
+
+
+    </div>
+
+
+
+
+    <script>
+
+        let attemptsLeft = 0; // عدد المحاولات المتبقية
+        let correctCard = null; // البطاقة الصحيحة
+        let won = false; // هل فاز اللاعب؟
+
+        // تحديد المستوى الحالي
+        let currentLevel;
+
+
+        let sceneStartGame = document.getElementById("sceneStartGame");
+        let sceneGame = document.getElementById("sceneGame");
+        let startGameBtn = document.getElementById("startGameBtn");
+        let sceneEasy = document.getElementById("sceneEasy");
+        let sceneMedium = document.getElementById("sceneMedium");
+        let sceneHard = document.getElementById("sceneHard");
+        let backMenuBtn = document.getElementById("backMenuBtn");
+        let easyBtn = document.getElementById("easyBtn");
+        let mediumBtn = document.getElementById("mediumBtn");
+        let hardBtn = document.getElementById("hardBtn");
+
+        let Attempts = document.getElementById('Attempts').querySelector('span');
+        let level = document.getElementById('level').querySelector('span');
+        let Wrong = document.getElementById('Wrong').querySelector('span');
+        let nextLevelBtn = document.getElementById('nextBtn'); // زر التالي
+        let messageDiv = document.getElementById('message');
+
+        // let audio = new Audio("beautiful.mp3");
+
+        // دالة لتوليد أرقام عشوائية
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+
+        // دالة لبناء البطاقات
+        function buildCards(container, count) {
+
+
+            container.innerHTML = ''; // تفريغ الحاوية من البطاقات القديمة
+            let numbers = Array.from({ length: count }, (_, index) => index + 1); // مصفوفة من الأرقام من 1 إلى count
+            correctCard = getRandomNumber(1, count); // اختيار رقم عشوائي للبطاقة الصحيحة
+            numbers.forEach(number => {
+                let card = document.createElement('div');
+                card.classList.add('card');
+                card.textContent = number;
+                // إضافة حدث النقر لكل بطاقة
+                card.addEventListener('click', () => {
+
+                    if (attemptsLeft === 0) {
+                        // إذا انتهت عدد المحاولات، عرض رسالة وتوقف اللعب
+                        messageDiv.innerHTML = '<p class="lost-message">لقد خسرت!</p>';
+                        // تعيين gameOver إلى true لتعطيل حدث النقر
+                        sceneEasy.style.display = "none";
+                        sceneMedium.style.display = "none";
+                        sceneHard.style.display = "none";
+                        sceneGame.style.display = "block";
+                        messageDiv.innerHTML = "";
+                        // إعادة تعيين المتغيرات وإخفاء رسالة الخسارة بعد فترة
+                        setTimeout(() => {
+                            
+                            Attempts.textContent = "";
+                            level.textContent = "";
+                            Wrong.textContent = "";
+                        }, 1); // بعد 1 ثانية
+
+                    }
+
+
+
+                    // فحص ما إذا كانت هذه البطاقة هي البطاقة الصحيحة
+                    if (number === correctCard && !won) {
+                        won = true;
+                        messageDiv.innerHTML = '<p class="lost-message">لقد فزت!</p>';
+                        // إظهار زر التالي للمرحلة التالية
+                        if (nextLevelBtn.classList.contains('hide')) {
+                            nextLevelBtn.classList.remove('hide');
+                        }
+                    } else if (!won) {
+                        // إنقاص عدد المحاولات إذا كان اللاعب لم يفز بعد
+                        attemptsLeft--;
+                        Attempts.textContent = attemptsLeft;
+                        if (attemptsLeft === 0) {
+                            messageDiv.innerHTML = '<p class="lost-message">لقد خسرت!</p>';
+                        }
+                    }
+                });
+                container.appendChild(card);
+
+
+            });
+
+
+        }
+
+
+        startGameBtn.addEventListener("click", () => {
+            sceneStartGame.style.display = "none";
+            sceneGame.style.display = "block";
+            // audio.play();
+            won = false; // تعيين المتغير won إلى false
+        });
+
+
+        backMenuBtn.addEventListener("click", () => {
+            sceneStartGame.style.display = "block";
+            sceneGame.style.display = "none";
+            // audio.pause();
+            // audio.currentTime = 0;
+            sceneEasy.style.display = "none";
+            sceneMedium.style.display = "none";
+            sceneHard.style.display = "none";
+
+            Attempts.textContent = '';
+            level.textContent = '';
+            Wrong.textContent = '';
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('show')) {
+                backMenuBtn.classList.remove('show');
+            } else {
+                backMenuBtn.classList.add('hide');
+            }
+
+            if (nextLevelBtn.classList.contains('show')) {
+                nextLevelBtn.classList.remove('show');
+            } else {
+                nextLevelBtn.classList.add('hide');
+            }
+
+            if(sceneStartGame){
+                backMenuBtn.style.display = "none";
+            }
+        });
+
+
+        easyBtn.addEventListener("click", () => {
+            sceneEasy.style.display = "block";
+            sceneGame.style.display = "none";
+            sceneMedium.style.display = "none";
+            sceneHard.style.display = "none";
+            // audio.play();
+
+            attemptsLeft = 3;
+            Attempts.textContent = attemptsLeft;
+            level.textContent = 'سهل';
+            Wrong.textContent = '0';
+            buildCards(document.getElementById('cardsEasy'), 3); // Generate 3 cards for easy level
+
+            won = false; // تعيين المتغير won إلى false
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('hide')) {
+                backMenuBtn.classList.remove('hide');
+            } else {
+                backMenuBtn.classList.add('show');
+            }
+
+            // إخفاء زر nextLevelBtn بداية كل مستوى
+            nextLevelBtn.classList.add('hide');
+
+        });
+
+
+        mediumBtn.addEventListener("click", () => {
+            sceneMedium.style.display = "block";
+            sceneGame.style.display = "none";
+            sceneEasy.style.display = "none";
+            sceneHard.style.display = "none";
+            // audio.play();
+
+            won = false; // تعيين المتغير won إلى false
+
+            attemptsLeft = 2;
+            Attempts.textContent = attemptsLeft;
+            level.textContent = 'متوسط';
+            Wrong.textContent = '0';
+            buildCards(document.getElementById('cardsMedium'), 6); // Generate 6 cards for medium level
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('hide')) {
+                backMenuBtn.classList.remove('hide');
+            } else {
+                backMenuBtn.classList.add('show');
+            }
+
+            // إخفاء زر nextLevelBtn بداية كل مستوى
+            nextLevelBtn.classList.add('hide');
+
+        });
+
+
+        hardBtn.addEventListener("click", () => {
+            sceneHard.style.display = "block";
+            sceneGame.style.display = "none";
+            sceneEasy.style.display = "none";
+            sceneMedium.style.display = "none";
+            // audio.play();
+
+            attemptsLeft = 1;
+            Attempts.textContent = attemptsLeft;
+            level.textContent = 'صعب';
+            Wrong.textContent = '0';
+            buildCards(document.getElementById('cardsHard'), 9); // Generate 9 cards for hard level
+
+            won = false; // تعيين المتغير won إلى false
+
+            // Toggle visibility using class
+            if (backMenuBtn.classList.contains('hide')) {
+                backMenuBtn.classList.remove('hide');
+            } else {
+                backMenuBtn.classList.add('show');
+            }
+
+
+            // إخفاء زر nextLevelBtn بداية كل مستوى
+            nextLevelBtn.classList.add('hide');
+
+        });
+
+
+
+
+        nextLevelBtn.addEventListener("click", () => {
+            if (sceneEasy.style.display === "block") {
+                // إذا كان المستوى الحالي هو سهل، قم بتبديل إلى المتوسط
+                sceneEasy.style.display = "none";
+                sceneMedium.style.display = "block";
+                attemptsLeft = 2;
+                Attempts.textContent = attemptsLeft;
+                level.textContent = 'متوسط';
+                buildCards(document.getElementById('cardsMedium'), 6); // Generate 6 cards for medium level
+                won = false; // تعيين المتغير won إلى false
+                messageDiv.innerHTML = "";
+            } else if (sceneMedium.style.display === "block") {
+                // إذا كان المستوى الحالي هو متوسط، قم بتبديل إلى الصعب
+                sceneMedium.style.display = "none";
+                sceneHard.style.display = "block";
+                attemptsLeft = 1;
+                Attempts.textContent = attemptsLeft;
+                level.textContent = 'صعب';
+                buildCards(document.getElementById('cardsHard'), 9); // Generate 9 cards for hard level
+                won = false; // تعيين المتغير won إلى false
+                messageDiv.innerHTML = "";
+            } else if (sceneHard.style.display === "block") {
+                // إذا كان المستوى الحالي هو صعب، قم بإعلان الفوز باللعبة
+                messageDiv.innerHTML = '<p class="lost-message">مبروك لقد فوزت باللعبة</p>';
+
+
+            
+            }
+
+
+            nextLevelBtn.classList.toggle('hide', true); // إخفاء زر nextLevelBtn بعد الضغط عليه
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

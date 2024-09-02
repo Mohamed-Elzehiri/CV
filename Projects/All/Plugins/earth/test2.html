@@ -1,0 +1,485 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        // إنشاء المشهد والكاميرا
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        // إنشاء المكعب
+        var geometry = new THREE.BoxGeometry();
+        var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        var cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        // تحديث موقع الكاميرا
+        camera.position.z = 5;
+
+        // إنشاء محرك الرسومات
+        var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("myCanvas") });
+        renderer.setSize(400, 400);
+
+        // دوران المكعب
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Globe</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Set up scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Create Earth geometry and texture
+        const geometry = new THREE.SphereGeometry(5, 32, 32);
+        const texture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg');
+        const material = new THREE.MeshBasicMaterial({ map: texture });
+
+        // Create Earth mesh
+        const earth = new THREE.Mesh(geometry, material);
+        scene.add(earth);
+
+        // Position camera
+        camera.position.z = 15;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            earth.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
+
+ 
+
+
+
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Globe</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        #container {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Create a scene
+        const scene = new THREE.Scene();
+
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 2;
+
+        // Create a renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+        document.body.appendChild(renderer.domElement);
+
+        // Load Earth texture
+        const textureLoader = new THREE.TextureLoader();
+        const earthTexture = textureLoader.load('https://raw.githubusercontent.com/jeromeetienne/threex.planets/master/images/earthspec1k.jpg');
+
+        // Create Earth mesh
+        const earthGeometry = new THREE.SphereGeometry(1, 32, 32);
+        const earthMaterial = new THREE.MeshBasicMaterial({ map: earthTexture });
+        const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
+        scene.add(earthMesh);
+
+        // Load marker texture
+        const markerTexture = textureLoader.load('https://cdn3.iconfinder.com/data/icons/ultimate-social/150/42_shopify-512.png');
+
+        // Create marker mesh
+        const markerGeometry = new THREE.PlaneGeometry(0.1, 0.1);
+        const markerMaterial = new THREE.MeshBasicMaterial({ map: markerTexture, transparent: true });
+        const markerMesh = new THREE.Mesh(markerGeometry, markerMaterial);
+        markerMesh.position.set(1.5, 0, 0); // Adjust position as needed
+        scene.add(markerMesh);
+
+        // Add event listener for window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            earthMesh.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>  -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Globe</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        #container {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Create a scene
+        const scene = new THREE.Scene();
+
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 2;
+
+        // Create a renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+        document.body.appendChild(renderer.domElement);
+
+        // Load Earth texture
+        const textureLoader = new THREE.TextureLoader();
+        const earthTexture = textureLoader.load('img/2/2.png');
+
+        // Create Earth mesh
+        const earthGeometry = new THREE.SphereGeometry(1, 32, 32);
+        const earthMaterial = new THREE.MeshBasicMaterial({ map: earthTexture });
+        const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
+        scene.add(earthMesh);
+
+        // Load marker texture
+        const markerTexture = textureLoader.load('https://cdn3.iconfinder.com/data/icons/ultimate-social/150/42_shopify-512.png');
+
+        // Create marker mesh
+        const markerGeometry = new THREE.PlaneGeometry(0.1, 0.1);
+        const markerMaterial = new THREE.MeshBasicMaterial({ map: markerTexture, transparent: true });
+        const markerMesh = new THREE.Mesh(markerGeometry, markerMaterial);
+        markerMesh.position.set(1.5, 0, 0); // Adjust position as needed
+        earthMesh.add(markerMesh); // Attach marker to Earth mesh
+
+        // Add event listener for window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            earthMesh.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
+ -->
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Earth Globe</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Create the Earth sphere
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const texture = new THREE.TextureLoader().load('img/2/2.png');
+        const material = new THREE.MeshBasicMaterial({ map: texture });
+        const earth = new THREE.Mesh(geometry, material);
+        scene.add(earth);
+
+        // Create and add icons around the Earth
+        const icons = [
+            { url: 'img/1.svg', lat: 0, lon: 0 },
+            { url: 'img/2.svg', lat: 30, lon: 45 },
+            { url: 'img/3.svg', lat: -30, lon: -45 },
+            // Add more icons as needed
+        ];
+
+        const iconSize = 0.05;
+        const iconGeometry = new THREE.PlaneGeometry(iconSize, iconSize);
+        const iconMaterial = new THREE.MeshBasicMaterial({ transparent: true, map: null });
+
+        icons.forEach(iconData => {
+            const icon = iconMaterial.clone();
+            icon.map = new THREE.TextureLoader().load(iconData.url);
+            const phi = THREE.MathUtils.degToRad(90 - iconData.lat);
+            const theta = THREE.MathUtils.degToRad(iconData.lon + 180);
+            const x = Math.sin(phi) * Math.cos(theta);
+            const y = Math.cos(phi);
+            const z = Math.sin(phi) * Math.sin(theta);
+            const iconMesh = new THREE.Mesh(iconGeometry, icon);
+            iconMesh.position.set(x, y, z).normalize().multiplyScalar(1.01);
+            scene.add(iconMesh);
+        });
+
+        // Set camera position and render the scene
+        camera.position.z = 3;
+        function animate() {
+            requestAnimationFrame(animate);
+            earth.rotation.y += 0.005; // Rotate the Earth
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+
+
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Globe</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const geometry = new THREE.SphereGeometry(5, 32, 32);
+        const material = new THREE.MeshBasicMaterial({
+            map: new THREE.TextureLoader().load('https://www.nasa.gov/sites/default/files/thumbnails/image/iss063e012359.jpg')
+        });
+        const earth = new THREE.Mesh(geometry, material);
+        scene.add(earth);
+
+        const loader = new THREE.TextureLoader();
+
+        const homeIconTexture = loader.load('https://www.flaticon.com/svg/static/icons/svg/1216/1216893.svg');
+        const linkIconTexture = loader.load('https://www.flaticon.com/svg/static/icons/svg/1246/1246013.svg');
+        const infoIconTexture = loader.load('https://www.flaticon.com/svg/static/icons/svg/616/616490.svg');
+
+        const icons = [
+            { texture: homeIconTexture, position: { x: -2, y: 2, z: 0 } },
+            { texture: linkIconTexture, position: { x: 2, y: 2, z: 0 } },
+            { texture: infoIconTexture, position: { x: 0, y: -2, z: 0 } }
+        ];
+
+        icons.forEach(icon => {
+            const iconGeometry = new THREE.PlaneGeometry(1, 1);
+            const iconMaterial = new THREE.MeshBasicMaterial({ map: icon.texture, transparent: true });
+            const iconMesh = new THREE.Mesh(iconGeometry, iconMaterial);
+            iconMesh.position.set(icon.position.x, icon.position.y, icon.position.z);
+            scene.add(iconMesh);
+        });
+
+        camera.position.z = 15;
+
+        const animate = function () {
+            requestAnimationFrame(animate);
+            earth.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        };
+
+        animate();
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Earth Globe</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Create the Earth sphere
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const texture = new THREE.TextureLoader().load('img/2/2.png'); // تم تغيير المسار هنا
+        const material = new THREE.MeshBasicMaterial({ map: texture });
+        const earth = new THREE.Mesh(geometry, material);
+        scene.add(earth);
+
+        // Create and add icons around the Earth
+        const icons = [
+            { url: 'img/1.svg', lat: 0, lon: 0 }, // تم تغيير المسار هنا
+            { url: 'img/2.svg', lat: 30, lon: 45 }, // تم تغيير المسار هنا
+            { url: 'img/3.svg', lat: -30, lon: -45 }, // تم تغيير المسار هنا
+            // Add more icons as needed
+        ];
+
+        const iconSize = 0.05;
+        const iconGeometry = new THREE.PlaneGeometry(iconSize, iconSize);
+        const iconMaterial = new THREE.MeshBasicMaterial({ transparent: true, map: null });
+
+        icons.forEach(iconData => {
+            const icon = iconMaterial.clone();
+            icon.map = new THREE.TextureLoader().load(iconData.url);
+            const phi = THREE.MathUtils.degToRad(90 - iconData.lat);
+            const theta = THREE.MathUtils.degToRad(iconData.lon + 180);
+            const x = Math.sin(phi) * Math.cos(theta);
+            const y = Math.cos(phi);
+            const z = Math.sin(phi) * Math.sin(theta);
+            const iconMesh = new THREE.Mesh(iconGeometry, icon);
+            iconMesh.position.set(x, y, z).normalize().multiplyScalar(1.01);
+            scene.add(iconMesh);
+        });
+
+        // Set camera position and render the scene
+        camera.position.z = 3;
+        function animate() {
+            requestAnimationFrame(animate);
+            earth.rotation.y += 0.005; // Rotate the Earth
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html> -->

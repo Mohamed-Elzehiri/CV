@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+      body {
+        background-color: #00a0ff;
+        background-image: linear-gradient(to bottom, #00a0ff, #8f00ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      #clock {
+        font-size: 100px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      #date {
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="clock"></div>
+      <div id="date"></div>
+    </div>
+
+    <script>
+      // When the DOM is ready, run this function
+      window.addEventListener("DOMContentLoaded", () => {
+        // Create a function to format numbers as text and add leading zero if necessary
+        function formatNumber(number) {
+          return number < 10 ? `0${number}` : number;
+        }
+
+        //number > 12 ? number - 12 : number;
+        
+
+        // Create a function to get the current time and update the display clock
+        function updateTime() {
+          // Get the current time
+          var now = new Date();
+
+          // Extract the seconds, minutes, and hours from the current time
+          var seconds = now.getSeconds();
+          var minutes = now.getMinutes();
+          var hours = now.getHours();
+
+          // Extract the day, month, and year from the current date
+          var day = now.getDate();
+          var month = now.getMonth() + 1; // Months are zero-based in JavaScript
+          var year = now.getFullYear();
+
+          // Update the display clock with the current time and date
+          document.getElementById("clock").textContent = `${formatNumber(hours)} : ${formatNumber(minutes)} : ${formatNumber(seconds)}`;
+          document.getElementById("date").textContent = `${formatNumber(day)} / ${formatNumber(month)} / ${year}`;
+        }
+
+        // Update the display clock every second
+        setInterval(updateTime, 1000);
+
+        // Update the display clock on page load
+        updateTime();
+      });
+    </script>
+  </body>
+</html>

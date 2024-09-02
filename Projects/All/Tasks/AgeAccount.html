@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Account</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- بداية التنسيق -->
+    <div class="container">
+      <div class="row">
+
+        <div class="text-center ">
+          <h1>حول عمرك بالثوانى والدقائق والساعات والايام والشهور</h1>
+          <h2>محول ( العمر )</h2>
+        </div>
+
+
+          <form class="m-5">
+            <div class="mb-3">
+              <label for="age" class="form-label"
+                >أدخل عمرك بالسنوات هنا :</label
+              >
+              <input type="number" class="form-control mt-3" id="age" />
+            </div>
+            <button type="submit" class="btn btn-primary">تحويل</button>
+          </form>
+
+          <div class="alert alert-success mt-3" role="alert" id="resultSeconds">
+            سيتم عرض النتيجة هنا بالثوانى.
+          </div>
+          <div class="alert alert-success mt-3" role="alert" id="resultMinutes">
+            سيتم عرض النتيجة هنا بالدقائق.
+          </div>
+          <div class="alert alert-success mt-3" role="alert" id="resultHours">
+            سيتم عرض النتيجة هنا بالساعات.
+          </div>
+          <div class="alert alert-success mt-3" role="alert" id="resultDays">
+            سيتم عرض النتيجة هنا بالأيام.
+          </div>
+          <div class="alert alert-success mt-3" role="alert" id="resultWeeks">
+            سيتم عرض النتيجة هنا بالاسبوع.
+          </div>
+          <div class="alert alert-success mt-3" role="alert" id="resultMonths">
+            سيتم عرض النتيجة هنا بالشهور.
+          </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script>
+      let forms = document.querySelectorAll("form");
+
+      forms.forEach((form) => {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const ageInYears = document.querySelector("#age").value;
+
+          // التحقق من صحة البيانات
+          if (isNaN(ageInYears) || ageInYears <= 0) {
+            alert("الرجاء إدخال عمر صحيح أكبر من 0");
+            return;
+          }
+
+          // حساب النتائج
+          const ageInSeconds = ageInYears * 365 * 24 * 60 * 60;
+          const ageInMinutes = ageInYears * 365 * 24 * 60;
+          const ageInHours = ageInYears * 365 * 24;
+          const ageInDays = ageInYears * 365;
+          const ageInWeeks = (ageInYears * 365) / 7;
+          const ageInMonths = ageInYears * 12;
+
+          // عرض النتائج
+          const resultElementSeconds = document.querySelector("#resultSeconds");
+          resultElementSeconds.innerHTML = `عمرك بالثواني = ${ageInSeconds}`;
+
+          const resultElementMinutes = document.querySelector("#resultMinutes");
+          resultElementMinutes.innerHTML = `عمرك بالدقائق = ${ageInMinutes}`;
+
+          const resultElementHours = document.querySelector("#resultHours");
+          resultElementHours.innerHTML = `عمرك بالساعات = ${ageInHours}`;
+
+          const resultElementDays = document.querySelector("#resultDays");
+          resultElementDays.innerHTML = `عمرك بالأيام = ${ageInDays}`;
+
+          const resultElementWeeks = document.querySelector("#resultWeeks");
+          resultElementWeeks.innerHTML = `عمرك بالأسابيع = ${ageInWeeks}`;
+
+          const resultElementMonths = document.querySelector("#resultMonths");
+          resultElementMonths.innerHTML = `عمرك بالشهور = ${ageInMonths}`;
+        });
+      });
+    </script>
+  </body>
+</html>

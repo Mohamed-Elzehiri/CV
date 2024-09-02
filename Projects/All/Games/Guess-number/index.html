@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>لعبة التخمين</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="game-container">
+      <h1>لعبة تخمين الرقم</h1>
+
+      <p>
+        اختر رقما بين 1 و 100 ثم اضغط تخمين لأحاول معرفته في 
+        <span id="max-guesses">10</span> محاولات
+      </p>
+
+      <div id="guessing-controls">
+        <input type="number" id="guess-input" min="1" max="100"/>
+        <button id="guess-btn">تخمين</button>
+      </div>
+
+      <div id="result"></div>
+
+      <div class="stats">
+        <div>محاولات: <span id="guess-count">0</span></div>
+        <div>أعلى رقم: <span id="high-score">0</span></div>
+      </div>
+
+      <div id="game-over"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

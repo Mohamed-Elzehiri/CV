@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختر البطاقة الصحيحة</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="flip.js"></script>
+
+</head>
+
+<body>
+
+    <!-- مشهد البداية -->
+    <div id="SceneStart">
+
+        <!-- زر الدخول للعب -->
+        <button id="startBtn">بدء اللعب</button>
+
+        <!-- طريقة اللعب -->
+        <div id="text">
+            <h1>لعبة اختيار البطاقة الصحيحة</h1>تتكون اللعبة من عشر مستويات بدء من المستوى الأول بمحاولة واحدة
+            لاختيار البطاقة الصحيحة من الثلاث بطاقات مع زيادة عدد المحاولات بمحاولة واحدة فى كل مستوى يتم تجاوزه ,
+            وزيادة البطاقات أيضا بعدد 2 بطاقة وصولاً للمستوى العاشر .
+        </div>
+
+
+    </div>
+
+
+    <!-- مشهد اللعب -->
+    <div id="SceneGame">
+
+        <div class="info">
+            <span id="levels">المستوى : 1 </span>
+            <span id="Attempts">المحاولات : 1 </span>
+        </div>
+    
+        <div id="game-container">
+            <div class="flip-card" id="card1">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" data-card="correct">
+                        <img src="image1.jpg" alt="Image 1">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="back.jpg" alt="Back Image">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="flip-card" id="card2">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" data-card="wrong">
+                        <img src="image2.jpg" alt="Image 2">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="back.jpg" alt="Back Image">
+                    </div>
+                </div>
+            </div>
+    
+            </div>
+    
+        <button id="backHome"> الصفحة الرئيسية </button>
+    
+    </div>
+    
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

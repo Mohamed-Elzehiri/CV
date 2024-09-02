@@ -1,0 +1,428 @@
+
+.container {
+    width: 100%
+}
+
+@media (min-width: 320px) {
+    .container {
+        max-width:320px
+    }
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width:640px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width:768px
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        max-width:900px
+    }
+}
+
+@media (min-width: 1080px) {
+    .container {
+        max-width:1080px
+    }
+}
+
+@media (min-width: 1090px) {
+    .container {
+        max-width:1090px
+    }
+}
+
+@media (min-width: 1120px) {
+    .container {
+        max-width:1120px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width:1200px
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width:1600px
+    }
+}
+
+
+
+
+====================================
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عنوان الموقع</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">الصفحة الرئيسية</a></li>
+                <li><a href="#">حول</a></li>
+                <li><a href="#">خدمات</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="main-content">
+            <h1>مرحبًا بك في موقعنا</h1>
+            <p>نص توضيحي عن الموقع.</p>
+        </section>
+
+        <aside id="sidebar">
+            <h2>الشريط الجانبي</h2>
+            <ul>
+                <li><a href="#">رابط 1</a></li>
+                <li><a href="#">رابط 2</a></li>
+                <li><a href="#">رابط 3</a></li>
+            </ul>
+        </aside>
+
+        <section>
+            <h2>أحدث المقالات</h2>
+            <article>
+                <h3>عنوان المقالة</h3>
+                <p>نص المقالة هنا.</p>
+            </article>
+            <article>
+                <h3>عنوان المقالة الأخرى</h3>
+                <p>نص المقالة الأخرى هنا.</p>
+            </article>
+        </section>
+        
+        <section>
+            <h2>أخبار</h2>
+            <article>
+                <h3>عنوان الخبر</h3>
+                <p>نص الخبر هنا.</p>
+            </article>
+            <article>
+                <h3>عنوان الخبر الأخرى</h3>
+                <p>نص الخبر الأخرى هنا.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>حقوق الطبع والنشر &copy; 2024</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
+
+
+
+
+==============================
+
+قسم لعرض الصور:
+
+<section>
+    <h2>معرض الصور</h2>
+    <div class="gallery">
+        <img src="image1.jpg" alt="صورة 1">
+        <img src="image2.jpg" alt="صورة 2">
+        <img src="image3.jpg" alt="صورة 3">
+    </div>
+</section>
+
+
+
+
+
+==============================
+
+قسم للفيديوهات:
+
+<section>
+    <h2>مكتبة الفيديو</h2>
+    <div class="videos">
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+
+
+
+
+==================================
+
+قسم للتعليقات:
+
+<section>
+    <h2>التعليقات</h2>
+    <div class="comments">
+        <div class="comment">
+            <p>تعليق 1</p>
+        </div>
+        <div class="comment">
+            <p>تعليق 2</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+======================================
+
+قسم لنموذج الاتصال:
+
+<section>
+    <h2>اتصل بنا</h2>
+    <form action="/submit_contact_form" method="post">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">الرسالة:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">إرسال</button>
+    </form>
+</section>
+
+
+
+
+
+=======================================
+
+منطقة التقديم للوظائف:
+
+<section>
+    <h2>تقديم للوظائف</h2>
+    <form action="/submit_job_application" method="post">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="resume">السيرة الذاتية:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+        <button type="submit">تقديم</button>
+    </form>
+</section>
+
+=======================================
+
+نموذج الاشتراك في النشرة الإخبارية:
+
+<section>
+    <h2>الاشتراك في النشرة الإخبارية</h2>
+    <form action="/subscribe_newsletter" method="post">
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">اشتراك</button>
+    </form>
+</section>
+
+
+========================================
+
+منطقة تقديم الملاحظات:
+
+<section>
+    <h2>أرسل لنا ملاحظاتك</h2>
+    <form action="/submit_feedback" method="post">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name">
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email">
+        <label for="message">الرسالة:</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="submit">إرسال</button>
+    </form>
+</section>
+
+
+==========================================
+
+منطقة الأسئلة الشائعة (FAQ):
+
+
+<section>
+    <h2>الأسئلة الشائعة</h2>
+    <details>
+        <summary>سؤال 1</summary>
+        <p>إجابة على سؤال 1.</p>
+    </details>
+    <details>
+        <summary>سؤال 2</summary>
+        <p>إجابة على سؤال 2.</p>
+    </details>
+    <!-- يمكنك إضافة المزيد من الأسئلة والأجوبة هنا -->
+</section>
+
+
+
+=============================================
+
+منطقة العروض والتخفيضات:
+
+<section>
+    <h2>العروض والتخفيضات</h2>
+    <div class="offers">
+        <div class="offer">
+            <h3>عرض خاص رقم 1</h3>
+            <p>وصف العرض هنا.</p>
+        </div>
+        <div class="offer">
+            <h3>عرض خاص رقم 2</h3>
+            <p>وصف العرض هنا.</p>
+        </div>
+        <!-- يمكنك إضافة المزيد من العروض هنا -->
+    </div>
+</section>
+
+=============================================
+
+منطقة العلامات التجارية الشريكة:
+
+<section>
+    <h2>علامات تجارية شريكة</h2>
+    <div class="partners">
+        <img src="partner1.png" alt="علامة تجارية 1">
+        <img src="partner2.png" alt="علامة تجارية 2">
+        <!-- يمكنك إضافة المزيد من العلامات التجارية هنا -->
+    </div>
+</section>
+
+
+=============================================
+
+منطقة الأسماء البارزة (Testimonials):
+
+<section>
+    <h2>آراء العملاء</h2>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>تجربة إيجابية مع الشركة.</p>
+            <cite>اسم العميل</cite>
+        </div>
+        <div class="testimonial">
+            <p>خدمة رائعة وفريق دعم ممتاز.</p>
+            <cite>اسم العميل</cite>
+        </div>
+        <!-- يمكنك إضافة المزيد من آراء العملاء هنا -->
+    </div>
+</section>
+
+
+=============================================
+
+منطقة العروض الوظيفية:
+
+<section>
+    <h2>فرص العمل</h2>
+    <ul>
+        <li><a href="#">مهندس برمجيات</a></li>
+        <li><a href="#">مصمم جرافيك</a></li>
+        <li><a href="#">مدير تسويق</a></li>
+        <!-- يمكنك إضافة المزيد من فرص العمل هنا -->
+    </ul>
+</section>
+
+=============================================
+
+منطقة الأحداث والندوات:
+
+<section>
+    <h2>الأحداث والندوات</h2>
+    <div class="events">
+        <div class="event">
+            <h3>ندوة تكنولوجيا المعلومات</h3>
+            <p>وصف الندوة والتاريخ والمكان.</p>
+        </div>
+        <div class="event">
+            <h3>ورشة العمل على التسويق الرقمي</h3>
+            <p>وصف الورشة والتاريخ والمكان.</p>
+        </div>
+        <!-- يمكنك إضافة المزيد من الأحداث والندوات هنا -->
+    </div>
+</section>
+
+
+=============================================
+
+منطقة الأسئلة والأجوبة (Q&A):
+
+
+<section>
+    <h2>الأسئلة والأجوبة</h2>
+    <dl>
+        <dt>سؤال 1؟</dt>
+        <dd>إجابة على سؤال 1.</dd>
+        <dt>سؤال 2؟</dt>
+        <dd>إجابة على سؤال 2.</dd>
+        <!-- يمكنك إضافة المزيد من الأسئلة والأجوبة هنا -->
+    </dl>
+</section>
+
+
+=============================================
+
+
+منطقة الاقتراحات والأفكار:
+
+<section>
+    <h2>الاقتراحات والأفكار</h2>
+    <form action="/submit_suggestion" method="post">
+        <label for="suggestion">أدخل اقتراحك أو فكرتك:</label>
+        <textarea id="suggestion" name="suggestion" required></textarea>
+        <button type="submit">إرسال</button>
+    </form>
+</section>
+
+
+=============================================
+
+
+عنصر <div>:
+يُستخدم لتجميع وتنظيم عناصر HTML معًا، ويُستخدم عادةً مع CSS لتطبيق التنسيقات.
+عنصر <section>:
+يُستخدم لتجميع محتوى ذو معنى متعلق في الصفحة، مثل قسم في صفحة المقالات أو الأخبار.
+عنصر <header>:
+يُستخدم لتعريف رأس الصفحة أو مقطع من الصفحة، مثل شريط التنقل أو عنوان الموقع.
+عنصر <footer>:
+يُستخدم لتعريف قاعدة الصفحة أو مقطع من الصفحة، مثل حقوق النشر أو روابط المواقع الاجتماعية.
+عنصر <nav>:
+يُستخدم لتعريف قائمة التنقل في الصفحة.
+عنصر <article>:
+يُستخدم لتعريف مقالة مستقلة في الصفحة، مثل مقالة في موقع الأخبار.
+عنصر <aside>:
+يُستخدم لتعريف محتوى جانبي ذو صلة بالمحتوى الرئيسي في الصفحة، مثل الشريط الجانبي أو مربع الاقتراحات.
+عنصر <form>:
+يُستخدم لإنشاء نماذج لتلقي بيانات المستخدم، مثل نموذج الاتصال أو نموذج الاشتراك.

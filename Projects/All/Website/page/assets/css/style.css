@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+.mohamed{
+    position: relative;
+    font-size:25px ;
+    font-weight: bold;
+}
+
+
+
+
+
+#imgLog{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -179px;
+    top: -18px;
+}
+
+
+
+
+@keyframes wave{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+#Elzehiri{
+color: red;
+font-size: 30px;
+font-weight: bold;
+letter-spacing: 3px;
+display: inline-block;
+animation: wave 2s  infinite alternate;
+}
+
+#Elzehiri:hover{
+    color: white;
+}
+
+#during {
+    display: inline-block;
+    animation: rotateAndMove 10s  infinite;
+}
+
+@keyframes rotateAndMove {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(360deg) translateY(-30px);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    75% {
+        transform: rotate(-360deg) translateY(-30px);
+    }
+}
+
+
+
+
+
+
+
+
+
+.imgSection1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.img3Section1{
+    height: 60%;
+}
+
+.textSection2{
+    font-size: 1.6rem;
+
+}
+#number{
+    background-color: aquamarine;
+    padding: 2px;
+}
